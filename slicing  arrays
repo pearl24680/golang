@@ -25,3 +25,10 @@ func main() {
         fmt.Println(index, value)
     }
 }
+
+
+
+map[string]int32
+map function 
+var myMap map[string]unit8=make(map[string]unit8)
+fmt.println(my map)
