@@ -1,0 +1,13 @@
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    fmt.Println(utf8.RuneCountInString("Y"))
+    
+    var myRune rune = 'a'
+    fmt.Println(myRune)
+}
