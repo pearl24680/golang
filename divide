@@ -1,0 +1,8 @@
+package main
+import "fmt"
+
+func main() {
+  var intNum1 int = 3
+  var intNum2 int =2
+  fmt.Println(intNum1/intNum2)
+}
