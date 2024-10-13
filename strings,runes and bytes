@@ -1,0 +1,26 @@
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    var myString = "resume"
+    var indexed = myString[0]
+    fmt.Printf("%v, %T\n", indexed, indexed)
+    
+    for i, v := range myString {
+        fmt.Printf("%d, %c\n", i, v)
+    }
+
+    fmt.Printf("\nThe length of 'myString' is %v\n", utf8.RuneCountInString(myString))
+    
+    var myRune rune = 'a'
+    fmt.Printf("\nmyRune = %v, %T\n", myRune, myRune)
+}
+#bytes
+// Print bytes and indexes
+    for i, v := range []byte(myString) {
+        fmt.Printf("%d, %v\n", i, v)
+    }
