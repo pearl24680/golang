@@ -1,0 +1,75 @@
+Structs in Go are a way to group together variables of different
+types into a single type. Think of it as
+a container that can hold data of various types under one umbrella.
+
+package main
+
+import (
+    "fmt"
+)
+
+// Define a struct
+type Person struct {
+    Name string
+    Age  int
+    City string
+}
+
+func main() {
+    // Initialize a struct
+    person1 := Person{Name: "Alice", Age: 30, City: "New York"}
+
+    // Access struct fields
+    fmt.Printf("Name: %s, Age: %d, City: %s\n", person1.Name, person1.Age, person1.City)
+}
+
+Interfaces in Go define a set of method signatures but don't 
+implement them. Any type that implements these methods can be 
+said to satisfy the interface. Interfaces allow for flexible and
+modular code.
+
+package main
+
+import (
+    "fmt"
+)
+
+// Define an interface
+type Describer interface {
+    Describe() string
+}
+
+// Implement the interface with a struct
+type Person struct {
+    Name string
+    Age  int
+}
+
+func (p Person) Describe() string {
+    return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
+}
+
+// Another struct implementing the same interface
+type Animal struct {
+    Name  string
+    Species string
+}
+
+func (a Animal) Describe() string {
+    return fmt.Sprintf("%s is a %s.", a.Name, a.Species)
+}
+
+func main() {
+    // Create instances of structs
+    person1 := Person{Name: "Alice", Age: 30}
+    animal1 := Animal{Name: "Leo", Species: "Lion"}
+
+    // Use the interface
+    describe(person1)
+    describe(animal1)
+}
+
+// Function that accepts an interface type
+func describe(d Describer) {
+    fmt.Println(d.Describe())
+}
